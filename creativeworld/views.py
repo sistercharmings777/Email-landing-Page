@@ -6,8 +6,8 @@ from creativeworld.models import Contact, ContactAdmin, Subscription
 from django.contrib import messages
 from django.core.mail import send_mail
 
-from dotenv import load_dotenv
-load_dotenv
+# from dotenv import load_dotenv
+# load_dotenv
 
 
 def index(request):
