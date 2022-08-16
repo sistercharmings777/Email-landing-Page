@@ -68,7 +68,7 @@ def subscription(request):
 
         #Email message
         subject = "Welcome to Creative World"
-        message = "Thank you for contacting us"
+        message = "Thank you for subscribing to creativeminds"
         from_email = settings.EMAIL_HOST_USER
         to_list = [mail]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
