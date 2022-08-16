@@ -30,20 +30,12 @@ def index(request):
         contact = Contact(name=name, email=email, subject=subject, message=message)
         contact.save()
         
-
         # Contact Admin
         subject = "Enquiry"
         message = f"An enquiry was made from {clientemail}\n\n Visit admin site to see more.\n\n Thank You!."
         from_email = clientemail
         to_list = ["sistercharmings@gmail.com"]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
-
-        # #Contact client
-        # subject = "Received"
-        # message = f"Dear {name}, your enquire was recorded. \n\n Thanks You!!"
-        # from_email = "sistercharmings@gmail.com"
-        # to_list = [clientemail]
-        # send_mail (subject, message, from_email, to_list, fail_silently=True)
         
     context = {
             'admincontacts': admincontacts
@@ -75,6 +67,3 @@ def subscription(request):
 
     return render(request, 'pages/index.html')
 
-
-# def successpage(request):
-#     return render('pages/success.html')
