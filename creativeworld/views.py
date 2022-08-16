@@ -51,7 +51,7 @@ def subscription(request):
 
         usermail = Subscription.objects.filter(mail=email)
         if usermail.exists():
-            messages.error(request, 'This email has already subcriped')
+            messages.error(request, 'This email has already subcribed')
             return redirect('index')
         
         mail = Subscription(mail=email)
