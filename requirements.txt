@@ -1,5 +1,4 @@
 anyio==3.6.1
-apturl==0.5.2
 asgiref==3.5.1
 astroid==2.11.6
 attrs==21.2.0
