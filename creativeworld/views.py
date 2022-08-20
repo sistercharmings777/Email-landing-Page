@@ -14,6 +14,10 @@ def index(request):
 
     admincontacts = ContactAdmin.objects.all()
 
+    # Number of visits to this view, as counted in the session variabel
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+    
     if request.method == "POST":
         name = request.POST.get('name')
         email = request.POST.get('email')

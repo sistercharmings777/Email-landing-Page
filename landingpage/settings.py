@@ -15,11 +15,11 @@ from pathlib import Path
 import django_heroku
 import dj_database_url
 from decouple import config
-
-
 import environ
 
+# Initialise environment variables
 env = environ.Env()
+# READING .ENV FILE
 environ.Env.read_env()
 
 
@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(bgjym3j1+ltjfou3b05=o2)rjd7e6jj7u(ud)6_-^sxooa4%8'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -90,9 +90,9 @@ WSGI_APPLICATION = 'landingpage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'LANDING_TEST',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
         'HOST': 'localhost',
         'PORT': "5432"
     }

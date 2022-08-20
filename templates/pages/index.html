@@ -23,12 +23,7 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: ComingSoon - v4.6.0
-  * Template URL: https://bootstrapmade.com/comingsoon-free-html-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body>
@@ -61,6 +56,7 @@
       </div>
 
       <div class="subscribe">
+        <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
         <h4>Subscribe now to get the latest updates!</h4>
         <form action="{% url 'subscription' %}" method="post" class="php-email-form">
           {% csrf_token %}
